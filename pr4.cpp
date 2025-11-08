@@ -6,16 +6,16 @@ int main() {
 	int num; cin >> num;
 
 	for (int multiplier = 1; multiplier < 10; multiplier++) {
-		cout << "Ðåøèòå ïðèìåð: " << num << " x " << multiplier << endl;
+		cout << "Ð ÐµÑˆÐ¸Ñ‚Ðµ Ð¿Ñ€Ð¸Ð¼ÐµÑ€: " << num << " x " << multiplier << endl;
 		int  answer;
-		cout << "Îòâåò: "; cin >> answer;
+		cout << "ÐžÑ‚Ð²ÐµÑ‚: "; cin >> answer;
 		if (answer == num * multiplier) {
-			cout << "Ïðèìåð ðåøåí ïðàâèëüíî!\n";
+			cout << "ÐŸÑ€Ð¸Ð¼ÐµÑ€ Ñ€ÐµÑˆÐµÐ½ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾!\n";
 		}
 		else {
-			cout << "Îøèáêà, ïðèìåð ðåøåí íåâåðíî!";
+			cout << "ÐžÑˆÐ¸Ð±ÐºÐ°, Ð¿Ñ€Ð¸Ð¼ÐµÑ€ Ñ€ÐµÑˆÐµÐ½ Ð½ÐµÐ²ÐµÑ€Ð½Ð¾!";
 			return 0;
 		}
 	}
-	cout << "Ïðèìåðû ðåøåíû, ïîçäðàâëÿåì!";
+	cout << "ÐŸÑ€Ð¸Ð¼ÐµÑ€Ñ‹ Ñ€ÐµÑˆÐµÐ½Ñ‹, Ð¿Ð¾Ð·Ð´Ñ€Ð°Ð²Ð»ÑÐµÐ¼!";
 }
