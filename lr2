@@ -1,0 +1,56 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+	bool run = true;
+	string history[5];
+	int ss = 0;
+	while (run == true) {
+		setlocale(0, "");
+		cout << "Введите первое число: "; int num1; cin >> num1;
+		cout << "Введите операцию (+, -, *, /) или 'history', 'exit': "; string oper; cin >> oper;
+		cout << "Введите второе число: "; int num2; cin >> num2;
+		if (oper == "exit") {
+			cout << "До свидания!";
+			return 0;
+		}
+		else if (oper == "history") {
+			for (int i = 0; i < 5; i++) {
+				cout << history[i] << endl;
+			}
+		}
+		if (ss == 5) {
+			ss = 0;
+		}
+		if (oper == "+") {
+			cout << "Результат: " << num1 + num2 << endl << endl;
+			history[ss] = to_string(num1) + " + " + to_string(num2) + " = " + to_string(num1 + num2);
+			ss += 1;
+		}
+		else if (oper == "-") {
+			cout << "Результат: " << num1 - num2 << endl << endl;
+			history[ss] = to_string(num1) + " - " + to_string(num2) + " = " + to_string(num1 - num2);
+			ss += 1;
+		}
+		else if (oper == "*") {
+			cout << "Результат: " << num1 * num2 << endl << endl;
+			history[ss] = to_string(num1) + " * " + to_string(num2) + " = " + to_string(num1 * num2);
+			ss += 1;
+		}
+		else if (oper == "/") {
+			if (num2 != 0) {
+				cout << "Результат: " << (float)num1 / (float)num2 << endl << endl;
+				history[ss] = to_string(num1) + " / " + to_string(num2) + " = " + to_string(float(num1) / float(num2));
+				ss += 1;
+			}
+			else {
+				cout << "Ошибка! Делить на 0 нельзя";
+			}
+		}
+	}
+}
+
+int runRegressionTests() {
+
+}
