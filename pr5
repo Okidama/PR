@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	float num1; cout << "Введите первое число: "; cin >> num1;
+	float num2; cout << "Введите второе число: "; cin >> num2;
+	char oper;
+	cout << "1) Сложение		| +\n" << "2) вычитание		| -\n" << "3) умножение		| *\n" << "4) деление		| /\n" << "5) остаток от деления	| %\n";
+	cout << "Выберите действие: "; cin >> oper;
+
+	if (oper == '+') {
+		cout << "Результат: " << num1 << " + " << num2 << " = " << (num1 + num2);
+	}
+	else if (oper == '-') {
+		cout << "Результат: " << num1 << " - " << num2 << " = " << (num1 - num2);
+	}
+	else if (oper == '*') {
+		cout << "Результат: " << num1 << " * " << num2 << " = " << (num1 * num2);
+	}
+	else if (oper == '/') {
+		if (num2 != 0) {
+			cout << "Результат: " << num1 << " / " << num2 << " = " << (num1 / num2);
+		}
+		else {
+			cout << "Ошибка! Деление на 0";
+		}
+	}
+	else if (oper == '%') {
+		cout << "Результат: " << num1 << " % " << num2 << " = " << fmod(num1, num2);
+	}
+}
