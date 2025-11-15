@@ -10,17 +10,17 @@ int main() {
 	cout << "Выберите действие: "; cin >> oper;
 
 	if (oper == '+') {
-		cout << "Результат: " << num1 << " + " << num2 << " = " << (num1 + num2);
+		cout << "Результат: " << num1 << " + " << num2 << " = " << num1 + num2;
 	}
 	else if (oper == '-') {
-		cout << "Результат: " << num1 << " - " << num2 << " = " << (num1 - num2);
+		cout << "Результат: " << num1 << " - " << num2 << " = " << num1 - num2;
 	}
 	else if (oper == '*') {
-		cout << "Результат: " << num1 << " * " << num2 << " = " << (num1 * num2);
+		cout << "Результат: " << num1 << " * " << num2 << " = " << num1 * num2;
 	}
 	else if (oper == '/') {
 		if (num2 != 0) {
-			cout << "Результат: " << num1 << " / " << num2 << " = " << (num1 / num2);
+			cout << "Результат: " << num1 << " / " << num2 << " = " << num1 / num2;
 		}
 		else {
 			cout << "Ошибка! Деление на 0";
