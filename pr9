@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	while (true) {
+		int num;
+		int i = 0;
+		cout << "Введите число от 1 до 15: "; cin >> num;
+		if (1 <= num and num <= 15) {
+			while (i < num) {
+				cout << "Цикл отработал. Круг " << i + 1 << endl;
+				i++;
+			}
+		}
+		else if (num == 0) {
+			return 0;
+		}
+		else {
+			cout << "Число находиться вне диапазона\n";
+		}
+	}
+}
