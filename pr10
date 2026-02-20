@@ -1,0 +1,34 @@
+#include <iostream>
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	char choice;
+	int num;
+	int attempt = 5;
+	int cor_ans = 0;
+	srand(time(0));
+	int random_num = rand() % 10 + 1;
+	cout << "[1] Начать игру\n[2] Выход\n"; cin >> choice;
+	if (choice == '2') {
+		return 0;
+	}
+	else if (choice == '1') {
+		while (attempt != 0) {
+			cout << "Угаданных чисел[" << cor_ans << "/3]\n" << "Попыток[" << attempt << "]\n";
+			cout << "Угадать число: "; cin >> num;
+			if (num == random_num) {
+				cout << "Число угадано\n";
+				random_num = rand() % 10 + 1;
+				attempt--;
+				cor_ans++;
+			}
+			else {
+				cout << "Число не угадано\n";
+				attempt--;
+			}
+		}
+	}
+}
