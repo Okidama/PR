@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	int num = 1;
+	int sum = 0;
+	int amount = 0;
+	while (num != 0) {
+		cout << "Введите число: "; cin >> num;
+		sum += num;
+		amount += 1;
+	}
+	cout << "Количество чисел: " << amount - 1 << endl;
+	cout << "Сумма: " << sum;
+}
