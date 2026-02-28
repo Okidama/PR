@@ -1,0 +1,82 @@
+#include <iostream>
+#include <cstdlib>
+#include <string>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	short choice;
+	short choice2 = 0;
+	string name = "player";
+	short questions;
+	string questionss[12] = { "Системный язык программирования?", "Что обозначает аббревиатура IDE?", "Какой оператор используется в C++ для выделения памяти в куче?" , "Какой тип данных в C++ предназначен для хранения одного символа?" , "Как называется первый индекс элемента в массиве в C++?" , "Какую библиотеку нужно подключить для использования std::vector" , "Что выведет код: cout << (5 > 3 && 2 < 1); ?" , "Что такое синтаксическая ошибка?" , "Для чего используется ключевое слово break в циклах?" , "Как расшифровывается ООП?" , "Какое значение будет в переменной x после выполнения int x = 10 / 3;?" , "Что делает оператор endl в C++?"};
+	string answers[12] = {"[A] Python	[B] C#\n[C] Ruby	[D] C++\n", "[A] Internet Development Environment	[B] Integrated Development Environment\n[C] Internal Debugging Engine	[D] Intelligent Data Editor\n", "[A] alloc	[B] memalloc\n[C] new	[D] create\n", "[A] string	[B] char\n[C] symbol	[D] int\n", "[A] 1	[B] first\n[C] start	[D] 0\n", "[A] #include <list>	[B] #include <array>\n[C] #include <vector>	[D] #include <math.h>\n", "[A] true	[B] 1\n[C] 0	[D] false\n", "[A] Ошибка во время выполнения программы	[B] Ошибка в алгоритме, приводящая к неверному результату\n[C] Ошибка в написании кода, нарушение правил языка	[D] Ошибка при подключении оборудования\n", "[A] Для перехода к следующей итерации цикла	[B] Для завершения программы\n[C] Для немедленного выхода из цикла	[D] Для объявления переменной\n", "[A] Основная Операционная Программа	[B] Объектно-Ориентированное Программирование\n[C] Объединение Основных Правил	[D] Обработка Ошибочных Параметров\n", "[A] 3.33	[B] 3\n[C] 3.0	[D] 1\n", "[A] Завершает программу	[B] Переводит курсор на новую строку и очищает буфер\n[C] Вставляет пробел	[D] Удаляет последний символ\n" };
+	char right_answers[12] = {'D', 'B', 'C', 'B', 'D', 'C', 'C', 'C', 'C', 'B', 'B', 'B'};
+	char answer;
+	short color; 
+	do {
+		short lifes = 3;
+		short score = 0;
+		system("cls");
+		cout << "[1] Начать игру\n[2] Настройки\n[3] Правила\n[4] Выйти\n"; cin >> choice;
+		switch (choice) {
+		case 1:
+			system("cls");
+			for (int i = 0; i < 12; i++) {
+				if (lifes != 0) {
+					system("cls");
+					cout << "Игрок: " << name << " | жизни: " << lifes << " | очки: " << score << endl;
+					cout << "Вопрос: " << questionss[i] << endl;
+					cout << answers[i];
+					cout << "Ответ: "; cin >> answer;
+					if (answer == right_answers[i]) {
+						score++;
+						cout << "Ответ верный\n";
+						system("pause");
+					}
+					else {
+						lifes--;
+						cout << "Ответ неверный\n";
+						system("pause");
+					}
+				}
+				else {
+					cout << "Вы проиграли";
+					return 0;
+				}
+			}
+			cout << "Вы прошли викторину\nОставшиеся жизни: " << lifes << "\nНабранные баллы: " << score << endl;
+			system("pause");
+			break;
+		case 2:
+			do {
+				system("cls");
+				cout << "[1] Редактирование имени игрока\n[2] Редактирование вопросов в игре\n[3] Редактирование цвета интерфейса\n[4] Выход\n"; cin >> choice2;
+				switch (choice2) {
+				case 1:
+					cout << "Введите имя игрока: "; cin >> name;
+					break;
+				case 2:
+					cout << "Выберите количество вопросов в игре\n8\n10\n12\n"; cin >> questions;
+					break;
+				case 3:
+					cout << "Выберите цвет интерфейса\n[1] Синий\n[2] Зеленый\n[3] Голубой\n[4] Красный\n[5] Лиловый\n[6] Желтый\n[7] Белый \n[8] Серый\n"; cin >> color;
+					string col = "color 0" + to_string(color);
+					system(col.c_str());
+					break;
+				}
+			} while (choice2 != 4);
+			break;
+		case 3:
+			system("cls");
+			cout << "Игрок получает очки за правильный ответ на вопрос\n";
+			cout << "Игрок проходит дальше за правильный ответ\n";
+			cout << "Игрок теряет жизнь при неправильном ответе\n";
+			system("pause");
+			break;
+		case 4:
+			break;
+		}
+	} while (choice != 4);
+	return 0;
+}
