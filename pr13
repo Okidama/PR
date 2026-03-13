@@ -1,0 +1,54 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main() {
+	setlocale(0, "");
+	short choice;
+	short direction;
+	int lenght;
+	char tex;
+	cout << "[1] Линия\n[2] Квадрат\n";
+	cout << "Выберите фигуру: "; cin >> choice;
+	system("cls");
+	switch (choice) {
+	case 1:
+		cout << "Фигура: 'Линия'\n";
+		cout << "[1] Горизонтальная\n" << "[2] Вертикальная\n" << "Выберите тип: "; cin >> direction;
+		cout << "Длина линии: "; cin >> lenght;
+		cout << "Текстура линии: "; cin >> tex;
+		cout << "Результат:\n";
+		switch (direction) {
+		case 1:
+			for (int i = 0; i < lenght; i++) {
+				cout << tex;
+			}
+			break;
+		case 2:
+			for (int i = 0; i < lenght; i++) {
+				cout << tex << endl;
+			}
+			break;
+		}
+	case 2:
+		cout << "Фигура: 'Квадрат'\n";
+		cout << "[1] Заполненный\n" << "[2] Пустой\n" << "Выберите тип: "; cin >> direction;
+		cout << "Размер квадрата: "; cin >> lenght;
+		cout << "Текстура линии: "; cin >> tex;
+		cout << "Результат:\n";
+		switch (direction) {
+		case 1:
+			for (int i = 0; i < lenght; i++) {
+				cout << string(lenght, tex) << endl;
+			}
+			break;
+		case 2:
+			cout << string(lenght, tex) << endl;
+			for (int i = 0; i < (lenght - 2); i++) {
+				cout << tex << string(lenght - 2, ' ') << tex << endl;
+			}
+			cout << string(lenght, tex) << endl;
+			break;
+		}
+	}
+}
